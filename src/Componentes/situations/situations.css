@@ -1,0 +1,15 @@
+div{
+    color: white;
+}
+
+
+.react-multi-carousel-dot--active button {
+    background: white;
+}
+
+#inside-container{
+    border-color: white;
+    border-width: 2px;
+    background-color: rgba(104,104,104,0.95);
+    border-radius: 15px 50px;
+}

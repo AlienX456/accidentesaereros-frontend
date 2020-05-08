@@ -1,0 +1,29 @@
+#info{
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    background-color: rgba(90,90,90,0.98);
+    border-radius: 15px 50px;
+}
+
+#boton-situaciones{
+    background-color: rgba(90,90,90,0.98);
+}
+
+#data{
+    size: 0.8em;
+}
+
+img{
+    height: auto;
+    width: auto;
+    border-radius: 50px 15px;
+    border-color: white;
+    border-width: 2px;
+
+}
+
+h1{
+    font-size: 2em;
+    color: white;
+}
