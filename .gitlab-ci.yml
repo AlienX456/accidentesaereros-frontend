@@ -2,7 +2,7 @@ stages:
   - prebuild
   - test
   #- build
-  #- deploy
+  - deploy
 
 
 image : node:14.0.0-slim
@@ -22,4 +22,12 @@ test:
     - test
   script:
    - CI=true yarn test
- 
+
+
+deploy:
+  stage: deploy
+  when: manual
+  script:
+    - yarn run build
+    - npm install -g serve
+    - serve -s build -l 3000
