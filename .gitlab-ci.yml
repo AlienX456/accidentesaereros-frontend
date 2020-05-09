@@ -14,9 +14,9 @@ test:
    - CI=true yarn test
 
 build:
-  stage: prebuild
+  stage: build
   tags:
-    - prebuild
+    - build
   script:
     - yarn
     - yarn run build
