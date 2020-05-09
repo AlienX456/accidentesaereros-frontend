@@ -25,6 +25,8 @@ test:
 
 
 deploy:
+  tags:
+    - deploy
   stage: deploy
   when: manual
   script:
