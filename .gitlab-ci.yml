@@ -4,7 +4,7 @@ stages:
   #- deploy
 
 
-image : node:14.0.0-alpine
+image : node:14.0.0-slim
 
 test:
  stage: test
