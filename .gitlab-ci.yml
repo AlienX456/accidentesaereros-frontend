@@ -10,12 +10,16 @@ image : node:14.0.0-slim
 
 prebuild:
   stage: prebuild
+  tags:
+    - prebuild
   script:
     - yarn
     - yarn prebuild
 
 test:
- stage: test
- script:
-  - CI=true yarn test
+  stage: test
+  tags:
+    - test
+  script:
+   - CI=true yarn test
  
