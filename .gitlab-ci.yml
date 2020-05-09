@@ -1,14 +1,21 @@
 stages:
-  #- build
+  - prebuild
   - test
+  #- build
   #- deploy
 
 
 image : node:14.0.0-slim
 
+
+prebuild:
+  stage: prebuild
+  script:
+    - yarn
+    - yarn prebuild
+
 test:
  stage: test
  script:
-  - yarn
   - CI=true yarn test
  
