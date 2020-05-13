@@ -1,0 +1,40 @@
+stages:
+  - test
+  - build
+  - build-docker
+  - deploy
+
+test:
+  image : node:14.0.0-slim
+  stage: test
+  tags:
+    - test
+  script:
+   - CI=true yarn test
+
+build:
+  image : node:14.0.0-slim
+  stage: build
+  tags:
+    - build
+  script:
+    - yarn
+    - yarn run build
+  artifacts:
+    paths:
+      - build
+
+
+docker-build:
+  image: docker:latest
+  stage: build-docker
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+
+
+
