@@ -26,7 +26,7 @@ build:
 
 
 docker-build:
-  image: docker:latest
+  image: docker:dind
   stage: build-docker
   services:
     - docker:latest
