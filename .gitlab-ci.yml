@@ -26,10 +26,10 @@ build:
 
 
 docker-build:
-  image: docker:dind
+  image: docker:18.09.7
   stage: build-docker
   services:
-    - docker:latest
+    - docker:docker:18.09.7-dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $DOCKER_ENV_CI_REGISTRY
   script:
