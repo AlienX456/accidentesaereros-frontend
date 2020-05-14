@@ -41,3 +41,9 @@ docker-build:
 
 
 
+deploy:
+  stage: deploy
+  image: bitnami/kubectl
+  script:
+    - kubectl get deployment accidentes-aereos || kubectl create deployment accidentes-aereos --image="$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
+    - kubectl set image deployment/accidentes-aereos accidentes-aereos="$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
