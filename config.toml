@@ -1,6 +1,5 @@
 [[runners]]
-  url = "https://gitlab.com/"
   executor = "docker"
   [runners.docker]
-    image = "docker:19.03.8"
+    image = "docker:19.03"
     privileged = true
