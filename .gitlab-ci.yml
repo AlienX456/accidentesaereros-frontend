@@ -22,7 +22,7 @@ build:
 
 
 docker-build:
-  image: docker:stable
+  image: docker:19.03.8
   stage: build-docker
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $DOCKER_ENV_CI_REGISTRY
