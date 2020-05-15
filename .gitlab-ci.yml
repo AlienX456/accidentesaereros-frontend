@@ -22,8 +22,10 @@ build:
 
 
 docker-build:
-  image: stable-dind
+  image: docker:19.03
   stage: build-docker
+  services:
+    - docker:19.03-dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $DOCKER_ENV_CI_REGISTRY
   script:
