@@ -7,16 +7,12 @@ stages:
 test:
   image : node:14.0.0-slim
   stage: test
-  tags:
-    - test
   script:
    - CI=true yarn test
 
 build:
   image : node:14.0.0-slim
   stage: build
-  tags:
-    - build
   script:
     - yarn
     - yarn run build
