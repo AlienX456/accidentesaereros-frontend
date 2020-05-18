@@ -32,9 +32,6 @@ docker-build:
   script:
     - docker build --pull -t "$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
-  variables:
-    DOCKER_HOST: tcp://localhost:2375
-    DOCKER_TLS_CERTDIR: ""
 
 
 
