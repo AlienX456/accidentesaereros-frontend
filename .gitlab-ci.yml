@@ -27,6 +27,7 @@ docker-build:
   services:
     - docker:19.03-dind
   before_script:
+    - echo "$DOCKER_ENV_CI_REGISTRY"
     - docker login -u "$CI_REGISTRY_USER" -p "$DOCKER_TOKEN" "$DOCKER_ENV_CI_REGISTRY"
   script:
     - docker build --pull -t "$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG" .
