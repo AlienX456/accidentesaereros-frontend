@@ -13,8 +13,8 @@ spec:
         app: accidentes-aereos
     spec:
       containers:
-        - name: accidentes-aereos:master
-          image: localhost:5000/my-react-app
+        - name: accidentesaereos-frontend:master
+          image: alienx456/accidentes-aereos-frontend:master
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -32,4 +32,4 @@ spec:
       protocol: TCP
       nodePort: 80
   selector:
-    app: my-react-app
+    app: accidentes-aereos-frontend:master
