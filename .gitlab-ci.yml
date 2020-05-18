@@ -22,6 +22,8 @@ build:
 
 
 docker-build:
+  tags:
+    - docker
   image: docker:19.03
   stage: build-docker
   services:
