@@ -41,5 +41,4 @@ deploy:
   stage: deploy
   image: bitnami/kubectl
   script:
-    - docker pull "$CI_REGISTRY_USER/$CI_DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
     - kubectl apply -f deployment.yaml
