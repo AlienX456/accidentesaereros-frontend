@@ -36,6 +36,8 @@ docker-build:
 
 
 deploy:
+  tags:
+    - kubernetes
   stage: deploy
   image: bitnami/kubectl
   script:
