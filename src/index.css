@@ -9,6 +9,8 @@
 
 canvas{
     background: url("/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     z-index:-1;
 }
