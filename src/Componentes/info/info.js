@@ -22,7 +22,7 @@ export default class Info extends React.Component{
     }
 
     getDataAxios(){
-        axios.get("http://127.0.0.1:8000/api/informacion/?k_num="+this.cookies.get('num_accidente')).then
+        axios.get("http://54.237.70.9:8000/api/informacion/?k_num="+this.cookies.get('num_accidente')).then
         (
             res=>{
                 let result = res.data.results[0];

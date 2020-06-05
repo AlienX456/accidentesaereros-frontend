@@ -26,7 +26,7 @@ export default class Flightselect extends React.Component {
 
 
     getDataAxios(){
-        axios.get("http://127.0.0.1:8000/api/vuelos").then
+        axios.get("http://54.237.70.9:8000/api/vuelos").then
         (
             res=>{
                 let results = res.data.results;
